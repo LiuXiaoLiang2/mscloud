@@ -44,6 +44,7 @@
         <module>cloudalibaba-sentinel-service8401</module>
         <module>cloudalibaba-nacos-sentinel-provider9901</module>
         <module>cloudalibaba-nacos-sentinel-consumer8801</module>
+        <module>cloudalibaba-feign-sentinel-consumer7701</module>
     </modules>
     <packaging>pom</packaging>
 
