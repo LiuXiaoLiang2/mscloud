@@ -1,0 +1,18 @@
+server:
+  port: 3377
+
+spring:
+  application:
+    name: spring-cloud-config-client
+  cloud:
+    #Config客户端配置
+    config:
+      label: master #分支名称
+      name: order #配置文件名称
+      profile: dev #读取后缀名称   上述3个综合：master分支上config-dev.yml的配置文件被读取http://localhost:3344/master/order-dev.yml
+      uri: http://localhost:3355 #配置中心地址k
+    zookeeper:
+      connect-string: 119.3.160.28:2181
+      discovery:
+        # 创建zookeeper根目录名称, 默认是 /service
+        root: /payment

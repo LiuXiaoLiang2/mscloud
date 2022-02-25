@@ -1,0 +1,18 @@
+server:
+  port: 3355
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/lxl2018/springcloud-config # git仓库的地址
+          search-paths: / # git仓库地址下的相对地址，可以配置多个，用,分割。
+          username: 15810140695 #Git仓库用户名
+          password: lxl552211 #Git仓库密码
+    zookeeper:
+      connect-string: 119.3.160.28:2181
+      discovery:
+        # 创建zookeeper根目录名称, 默认是 /service
+        root: /payment

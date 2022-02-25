@@ -1,0 +1,17 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: nacos-payment-provider
+  cloud:
+    nacos:
+      discovery:
+        #server-addr: localhost:8848 #配置Nacos地址
+        server-addr: 119.3.160.28:1111 #配置nginx地址(nginx搭建的naocs集群)
+# 暴露所有监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
