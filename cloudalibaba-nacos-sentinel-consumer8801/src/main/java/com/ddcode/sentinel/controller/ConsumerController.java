@@ -22,7 +22,7 @@ public class ConsumerController {
 
     @GetMapping(value = "/sentinel/nacos/consumer/{id}")
     public String fallback(@PathVariable Long id) {
-        String response = restTemplate.getForObject(BASE_URL + "/sentinel/nacos/provider/" + id, String.class);
+        String response = restTemplate.getForObject("http://"+ BASE_URL + "/sentinel/nacos/provider/" + id, String.class);
         if (id == 4) {
             throw new IllegalArgumentException ("IllegalArgumentException,非法参数异常....");
         }
