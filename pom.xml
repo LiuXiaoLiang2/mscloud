@@ -42,6 +42,8 @@
         <module>cloudalibaba-nacos-consumer-order83</module>
         <module>cloudalibaba-nacos-config-client3377</module>
         <module>cloudalibaba-sentinel-service8401</module>
+        <module>cloudalibaba-nacos-sentinel-provider9901</module>
+        <module>cloudalibaba-nacos-sentinel-consumer8801</module>
     </modules>
     <packaging>pom</packaging>
 
