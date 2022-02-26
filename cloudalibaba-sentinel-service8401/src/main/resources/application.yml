@@ -19,6 +19,14 @@ spring:
         #还有8080【sentinel前台展示服务】交互数据
         #将监控的数据在dashboard上展现
         port: 8719
+      datasource:
+        ds1:
+          nacos:
+            server-addr: localhost:8848
+            dataId: ${spring.application.name}
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
 
 management:
   endpoints:
