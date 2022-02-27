@@ -48,6 +48,9 @@
         <module>cloudalibaba-seata-fegin-order2001</module>
         <module>cloudalibaba-seata-fegin-storage2002</module>
         <module>cloudalibaba-seata-fegin-account2003</module>
+        <module>cloudalibaba-seatapro-feign-order8811</module>
+        <module>cloudalibaba-seatapro-feign-storage8822</module>
+        <module>cloudalibaba-seatapro-feign-business8833</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -88,7 +91,7 @@
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.1.0.RELEASE</version>
+                <version>2.2.1.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

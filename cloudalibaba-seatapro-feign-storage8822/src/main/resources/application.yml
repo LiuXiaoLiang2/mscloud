@@ -1,0 +1,58 @@
+server:
+  port: 8822
+spring:
+  application:
+    name: storage-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://119.3.160.28:3306/seatapro_storage
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        register-enabled: true
+        namespace: b5110320-0219-46f8-bc3a-32cf79b7cd2c
+      config:
+        server-addr: localhost:8848
+        enabled: true
+        file-extension: yaml
+        namespace: b5110320-0219-46f8-bc3a-32cf79b7cd2c
+
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  # 事务群组（可以每个应用独立取名，也可以使用相同的名字），要与服务端nacos-config.txt中service.vgroup_mapping的后缀对应
+  tx-service-group: ${spring.application.name}-tx-group
+  service:
+    vgroup-mapping:
+      storage-service-tx-group: default
+#    grouplist:
+#      default: 127.0.0.1:8091
+#      enable-degrade: false
+#      disable-global-transaction: false
+  config:
+    type: nacos
+    # 需要和server在同一个注册中心下
+    nacos:
+      namespace: b5110320-0219-46f8-bc3a-32cf79b7cd2c
+      serverAddr: localhost:8848
+      # 需要server端(registry和config)、nacos配置client端(registry和config)保持一致
+      group: SEATA_GROUP
+      username: "nacos"
+      password: "nacos"
+      cluster: default
+  registry:
+    type: nacos
+    nacos:
+      # 需要和server端保持一致，即server在nacos中的名称，默认为seata-server
+      application: seata-server
+      server-addr: localhost:8848
+      group: SEATA_GROUP
+      namespace: b5110320-0219-46f8-bc3a-32cf79b7cd2c
+      username: "nacos"
+      password: "nacos"
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
