@@ -45,6 +45,9 @@
         <module>cloudalibaba-nacos-sentinel-provider9901</module>
         <module>cloudalibaba-nacos-sentinel-consumer8801</module>
         <module>cloudalibaba-feign-sentinel-consumer7701</module>
+        <module>cloudalibaba-seata-fegin-order2001</module>
+        <module>cloudalibaba-seata-fegin-storage2002</module>
+        <module>cloudalibaba-seata-fegin-account2003</module>
     </modules>
     <packaging>pom</packaging>
 
